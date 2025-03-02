@@ -5,10 +5,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileHandler {
-    private final static String BASE_PATH_OUT = "/Hill/Java/DEMO/ABC_16/FileHandler/";
+    private final static String BASE_PATH = "/Hill/Java/DEMO/ABC_16/FileHandler/";
 
     public String writeFile(String fileName, String fileContent) {
-        try (FileWriter fw = new FileWriter(BASE_PATH_OUT + fileName + ".txt")) {
+        try (FileWriter fw = new FileWriter(BASE_PATH + fileName + ".txt")) {
             fw.write(fileContent);
             return "Success.";
         } catch (Exception e) {
@@ -17,7 +17,7 @@ public class FileHandler {
     }
 
     public String readFile(String fileName) {
-        try (FileReader reader = new FileReader(BASE_PATH_OUT + fileName + ".txt")) {
+        try (FileReader reader = new FileReader(BASE_PATH + fileName + ".txt")) {
             int sym;
             StringBuilder stringBuilder = new StringBuilder();
             while ((sym = reader.read()) != -1) {
